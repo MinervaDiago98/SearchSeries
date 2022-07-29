@@ -1,9 +1,10 @@
 import CardSerie from './CardSerie'
+import NoResults from './NoResults'
 
 const Series = ({ data }) => {
   return (
     data && data.length === 0
-      ? 'no hay resultados'
+      ? <NoResults />
       : (
         <ul className='row gx-3'>
           {data.map(item => (
