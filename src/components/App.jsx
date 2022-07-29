@@ -1,38 +1,25 @@
 // HOOKS
-import { useRef, useEffect, useState } from 'react'
+import { useRef, useState } from 'react'
+import useFetcher from '../hooks/useFetcher'
+
 // Libraries
 import { FaSearch } from 'react-icons/fa'
-import axios from 'axios'
 // Components
 import Series from './Series'
 import Loading from './Loading'
 import Navbar from './Navbar'
 
-const URLSearch = 'https://api.tvmaze.com/search/shows?q='
-
 function App () {
   const searchRef = useRef(null)
-  const [series, setSeries] = useState([])
-  const [loading, setLoading] = useState(true)
-
-  const getSeries = async (serieName = 'z') => {
-    return await axios.get(`${URLSearch}${serieName}`)
-  }
-
-  const getData = async () => {
-    const { data } = await getSeries()
-    setSeries(data)
-    setLoading(false)
-  }
-
-  useEffect(() => {
-    getData()
-  }, [])
+  const [serieName, setSerieName] = useState('z')
+  const { data: series, loading } = useFetcher(serieName)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const { data } = await getSeries(searchRef.current.value)
-    setSeries(data)
+    // const { data } = await getSeries(searchRef.current.value)
+    // setSeries(data)
+    setSerieName(searchRef.current.value)
+    e.target.reset()
   }
 
   return (
