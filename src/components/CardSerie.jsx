@@ -1,7 +1,8 @@
+import { Link } from 'react-router-dom'
 import notFound from '../assets/notFound.png'
 
 const CardSerie = ({ show }) => {
-  const { name, image, language, status, premiered, updated, genres } = show
+  const { name, image, language, status, premiered, genres, id } = show
   console.log(genres)
 
   return (
@@ -16,10 +17,9 @@ const CardSerie = ({ show }) => {
             <p className='fw-semibold'> {language} language </p>
             <p className='fs-6 text-muted fit-content'><strong>Status: </strong>{status}</p>
             <p className='fs-6 text-muted fit-content'><strong>Premiered: </strong>{premiered}</p>
-            <p className='fs-6 text-muted fit-content'><strong>Updated: </strong>{updated}</p>
-            <p className='fs-6 text-muted'><strong>Gender: </strong>{genres.map((item) => `${item} `)}
+            <p className='fs-6 text-muted mb-5'><strong>Gender: </strong>{genres.map((item) => `${item} `)}
             </p>
-            <a href='none' classname='btn btn-primary'>Ver más...</a>
+            <Link to={`/serie/${id}`} classname='btn btn-primary'>Ver más ...</Link>
           </div>
         </div>
       </div>

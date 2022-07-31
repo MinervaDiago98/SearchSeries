@@ -1,14 +1,18 @@
-import { FaHome } from 'react-icons/fa'
+import { NavLink } from 'react-router-dom'
+import { FaArrowLeft } from 'react-icons/Fa'
 
-const Navbar = () => {
+export function Navbar () {
   return (
-    <nav className='navbar bg-nav'>
+    <nav className='navbar navbar-expand-lg bg-nav'>
       <div className='container-fluid'>
-        <FaHome className='text-white fs-2 ms-2' />
-        {/* <a className='navbar-brand text-white '>Series</a> */}
+        <div className='collapse navbar-collapse' id='navbarNavAltMarkup'>
+          <div className='navbar-nav'>
+            <NavLink className='nav-link ms-2' aria-current='page' to='/'><FaArrowLeft className='fs-4' /> </NavLink>
+            <NavLink className='nav-link' to='/serie' />
+          </div>
+        </div>
       </div>
     </nav>
-
   )
 }
 

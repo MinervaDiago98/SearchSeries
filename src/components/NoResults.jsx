@@ -1,4 +1,3 @@
-import { FaSadCry } from 'react-icons/fa'
 
 const NoResults = () => {
   return (
@@ -7,7 +6,6 @@ const NoResults = () => {
         <section className='col-3' />
         <section className='col-6 text-center'>
           <p className='fs-3 mt-5'>No se encontraron resultados</p>
-          <FaSadCry className='fs-1' />
         </section>
       </section>
     </section>

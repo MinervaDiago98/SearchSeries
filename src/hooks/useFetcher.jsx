@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import getSeries from '../utils/getSeries'
+import { getSeries } from '../utils/getSeries'
 
-const useFetcher = (serieName = 'z') => {
+const useFetcher = (serieName = 'z', id) => {
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
 
@@ -10,9 +10,11 @@ const useFetcher = (serieName = 'z') => {
     setData(data)
     setLoading(false)
   }
+
   useEffect(() => {
     getData()
   }, [serieName])
+
   return { data, loading }
 }
 

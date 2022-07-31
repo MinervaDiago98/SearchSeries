@@ -23,7 +23,14 @@ a{
     background-color: #e0e0e0; 
 }
 .bg-nav{
-    background-color: #000000;
+    background-color: #c7dfce;
+}
+.bg-input {
+    border-color: #dadada;
+}
+.bg-search{
+    background-color: #9cf8fa;
+    border-color: #dadada;
 }
 .shadow {
     box-shadow: 2px 2px 5px #999;
@@ -37,4 +44,10 @@ a{
 }
 .fit-content{
     height: .5rem;
+}
+.bg-span{
+    background-color: #db4bcd;
+}
+.bg-span2 {
+    border: 2px solid #82e4ff;
 }
